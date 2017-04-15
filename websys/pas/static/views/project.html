@@ -1,0 +1,22 @@
+<div class="page-header" div class="row" ng-init="getGroupInfo()">
+  <h2>{{ project.name }} <small>(id {{ project.id }})</small></h2>
+</div>
+
+<div class="panel panel-default">
+  <div class="panel-heading">
+    <h3 class="panel-title">Information</h3>
+  </div>
+  <div class="panel-body">
+    <div class="row">
+      <div class="col-md-2"><strong>Description</strong></div>
+      <div class="col-md-10">{{ project.description }}</div>
+    </div>
+
+    <div class="row">
+      <div class="col-md-2"><strong>Capacity</strong></div>
+      <div class="col-md-4">{{ project.capacity }}</div>
+      <div class="col-md-2"><strong>Supervisor</strong></div>
+      <div class="col-md-4"><a href="#/viewLecturer/{{ project.lid }}">{{ project.lid_name }}</a></div>
+    </div>
+  </div>
+</div>

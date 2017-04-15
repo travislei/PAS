@@ -1,0 +1,25 @@
+<div class="page-header" div class="row" ng-init="getProjectList()">
+  <h2>Project List</h2>
+</div>
+
+<div class="panel panel-default">
+  <div class="panel-heading">
+    <h3 class="panel-title">Information</h3>
+  </div>
+  <table class="table">
+    <thead>
+      <th>id</th>
+      <th>Name</th>
+      <th>Capacity</th>
+      <th>Description</th>
+      <th>Supervisor</th>
+    </thead>
+    <tbody ng-repeat="p in projectList | orderBy: 'id'">
+      <td>{{ p.id }}</td>
+      <td><a href="#viewProject/{{ p.id }}">{{ p.name }}</a></td>
+      <td>{{ p.capacity }}</td>
+      <td>{{ p.description }}</td>
+      <td><a href="#viewLecturer/{{ p.lid }}">{{ p.lid_name }}</a></td>
+    </tbody>
+  </table>
+</div>

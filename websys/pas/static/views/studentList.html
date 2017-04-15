@@ -1,0 +1,24 @@
+<div class="page-header" div class="row" ng-init="getStudentList()">
+  <h2>Student List</h2>
+</div>
+
+<div class="panel panel-default">
+  <div class="panel-heading">
+    <h3 class="panel-title">Information</h3>
+  </div>
+  <table class="table">
+    <thead>
+      <th>id</th>
+      <th>Name</th>
+      <th>Project Perference</th>
+      <th>Assignment</th>
+    </thead>
+    <tbody ng-repeat="s in studentList | orderBy: 'id'">
+      <td>{{ s.id }}</td>
+      <td><a href="#viewStudent/{{ s.id }}">{{ s.name }}</a></td>
+      <td>{{ s.preflist }}</td>
+      <td ng-show="s.assignment_id == 0">None</td>
+      <td ng-show="s.assignment_id != 0"><a href="#viewProject/{{ s.assignment_id }}">{{ s.assignment_name }}</a></td>
+    </tbody>
+  </table>
+</div>

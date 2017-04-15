@@ -1,0 +1,41 @@
+<div class="page-header" div class="row" ng-init="getGroupInfo()">
+  <h2>{{ group.name }} <small>(id {{ group.id }})</small></h2>
+</div>
+
+<div class="panel panel-primary">
+  <div class="panel-heading">
+    <h3 class="panel-title">Information</h3>
+  </div>
+  <div class="panel-body">
+    <div class="row">
+      <div class="col-md-2"><strong>Representative</strong></div>
+      <div class="col-md-4"><a href="#viewStudent/{{ group.sid }}">{{ group.sid_name }}</a></div>
+      <div class="col-md-2"><strong>Capacity</strong></div>
+      <div class="col-md-4">{{ group.capacity }}</div>
+    </div>
+
+    <div class="row">
+      <div class="col-md-2"><strong>Project Preference</strong></div>
+      <div class="col-md-7" ng-show="group.preflist == ''">None</div>
+      <div class="col-md-7" ng-show="group.preflist != ''">{{ group.preflist }}</div>
+    </div>
+  </div>
+</div>
+
+<div class="panel panel-default">
+  <div class="panel-heading">
+    <h3 class="panel-title">Member List</h3>
+  </div>
+  <table class="table">
+    <thead>
+      <th>id</th>
+      <th>Name</th>
+      <th>Project Preference</th>
+    </thead>
+    <tbody ng-repeat="s in group.members">
+      <td>{{ s.id }}</td>
+      <td><a href="#viewStudent/{{ s.id }}">{{ s.name }}</a></td>
+      <td>{{ s.preflist }}</td>
+    </tbody>
+  </table>
+</div>

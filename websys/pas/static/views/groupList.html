@@ -1,0 +1,26 @@
+<div class="page-header" div class="row" ng-init="getGroupList()">
+  <h2>Group List</h2>
+</div>
+
+<div class="panel panel-default">
+  <div class="panel-heading">
+    <h3 class="panel-title">Information</h3>
+  </div>
+  <table class="table">
+    <thead>
+      <th>id</th>
+      <th>Name</th>
+      <th>Capacity</th>
+      <th>Project Perference</th>
+      <th>Assignment</th>
+    </thead>
+    <tbody ng-repeat="g in groupList | orderBy: 'id'">
+      <td>{{ g.id }}</td>
+      <td><a href="#viewGroup/{{ g.id }}">{{ g.name }}</a></td>
+      <td>{{ g.capacity }}</td>
+      <td>{{ g.preflist }}</td>
+      <td ng-show="g.assignment_id == 0">None</td>
+      <td ng-show="g.assignment_id != 0"><a href="#viewProject/{{ g.assignment_id }}">{{ g.assignment_name }}</a></td>
+    </tbody>
+  </table>
+</div>

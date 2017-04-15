@@ -1,0 +1,21 @@
+<div class="page-header" div class="row" ng-init="getLecturerList()">
+  <h2>Lecturer List</h2>
+</div>
+
+<div class="panel panel-default">
+  <div class="panel-heading">
+    <h3 class="panel-title">Information</h3>
+  </div>
+  <table class="table">
+    <thead>
+      <th>id</th>
+      <th>Name</th>
+      <th>Capacity</th>
+    </thead>
+    <tbody ng-repeat="l in lecturerList">
+      <td>{{ l.id }}</td>
+      <td><a href="#viewLecturer/{{ l.id }}">{{ l.name }}</a></td>
+      <td>{{ l.capacity }}</td>
+    </tbody>
+  </table>
+</div>
